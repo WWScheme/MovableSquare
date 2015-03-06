@@ -1,2 +1,2 @@
-# MoveSquare
-A simple directx application drawed a movable square.
+# MovableSquare
+A simple directx application that drawed a movable square.
