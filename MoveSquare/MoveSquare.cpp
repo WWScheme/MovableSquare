@@ -1,9 +1,9 @@
 /****************************************************
 *    Author: Tianhao Wang
-*    Date:   2015-03-05   
-*    Desc:   Ò»¸öÊ¹ÓÃWASD¼ü¿ØÖÆÒÆ¶¯µÄ·½¿é£¬ÐÞ¸ÄÁË
-*            Ò»²¿·ÖDrawLinesµÄ´úÂë£¬²¢Ìí¼ÓÁËÒ»Ð©
-*            À´×ÔÁúÊéµÚ¶þ°æµÄº¯Êý¡£
+*    Date:   2015-03-06   
+*    Desc:   ä¸€ä¸ªä½¿ç”¨WASDé”®æŽ§åˆ¶ç§»åŠ¨çš„æ–¹å—ï¼Œä¿®æ”¹äº†
+*            ä¸€éƒ¨åˆ†DrawLinesçš„ä»£ç ï¼Œå¹¶æ·»åŠ äº†ä¸€äº›
+*            æ¥è‡ªé¾™ä¹¦ç¬¬äºŒç‰ˆçš„å‡½æ•°ã€‚
 *****************************************************/  
 
 #include "d3d9App.h"
@@ -31,8 +31,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, PSTR, int)
 
     DrawLines app(hInstance, "DrawLines", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
     g_pd3d9App = &app;
-    // DISCL_NONEXCLUSIVE±íÊ¾ÊäÈëÉè±¸²»»á±»³ÌÐò¶ÀÕ¼
-    // DISCL_FOREGROUND±íÊ¾´°¿Ú²¢·Ç´¦ÓÚÖÃ¶¥×´Ì¬Ê±£¬ÊäÈëÉè±¸Ëù´«µÝµÄÐÅÏ¢½«²»»á±»¶ÁÈ¡
+    // DISCL_NONEXCLUSIVEè¡¨ç¤ºè¾“å…¥è®¾å¤‡ä¸ä¼šè¢«ç¨‹åºç‹¬å 
+    // DISCL_FOREGROUNDè¡¨ç¤ºçª—å£å¹¶éžå¤„äºŽç½®é¡¶çŠ¶æ€æ—¶ï¼Œè¾“å…¥è®¾å¤‡æ‰€ä¼ é€’çš„ä¿¡æ¯å°†ä¸ä¼šè¢«è¯»å–
     DirectInput dxInput(DISCL_NONEXCLUSIVE | DISCL_FOREGROUND,
                         DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
     g_pDxInput = &dxInput;
@@ -61,7 +61,7 @@ DrawLines::~DrawLines()
     delete m_pLineArr;
 }
 
-// ¸üÐÂ·½¿éµÄÎ»ÖÃ
+// æ›´æ–°æ–¹å—çš„ä½ç½®
 void DrawLines::UpdateScene(float dt)
 {
     g_pDxInput->GetCurState();
